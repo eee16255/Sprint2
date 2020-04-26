@@ -44,7 +44,7 @@ public class TransactionServiceImpl implements ITransactionService {
 	}
 	
 	@Transactional
-	public AccountManagement updateProduct(AccountManagement newAccount)
+	public AccountManagement updateAccount(AccountManagement newAccount)
 	{
 		AccountManagement oldAccount=getOne(newAccount.getAccountId());
 		oldAccount.setAccountId(newAccount.getAccountId());
@@ -87,7 +87,7 @@ public class TransactionServiceImpl implements ITransactionService {
 		acc.setAccountBalance(acc.getAccountBalance()-amount);
 		return acc;
 	}
-
+  @Override
 	public AccountManagement CreditUsingSlip(String string, String accountId, double amount) {
 		 if(amount<100||amount>100000) {
 			 System.out.println("invalid amount");
@@ -100,7 +100,7 @@ public class TransactionServiceImpl implements ITransactionService {
 	}
 	
 
-	
+	@Override
 	public AccountManagement DebitUsingSlip(String string, String accountId, double amount) {
 		if(getAccountBalance(accountId)<amount) {
 			System.out.println("invalid id");

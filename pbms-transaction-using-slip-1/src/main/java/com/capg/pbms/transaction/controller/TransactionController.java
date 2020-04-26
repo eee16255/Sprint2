@@ -52,9 +52,9 @@ public class TransactionController {
 	}
 
 	@PutMapping("/account")
-	public AccountManagement  updateProduct(@RequestBody AccountManagement bean)
+	public AccountManagement  updateAccount(@RequestBody AccountManagement bean)
 	{
-		return  service.updateProduct(bean);
+		return  service.updateAccount(bean);
 	}
 	
 	@GetMapping("/account/deposit/{accountId}/{amount}")  
